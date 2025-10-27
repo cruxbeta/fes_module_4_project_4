@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RCRS Search</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f1178ea75a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "Weg1xuw2LnYP_gJTQ",
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <section id="landing-page">
+      <nav>
+        <div class="nav__container">
+          <div class="row">
+            <a href="#">
+              <figure>
+                <img
+                  id="logo-dark"
+                  src="./images/RCRS5000 (240x 45 px) scalable black.svg"
+                  alt="RCRS5000"
+                />
+              </figure>
+            </a>
+            <ul class="nav__link--list">
+              <li class="nav__link" onclick="toggleModal()">
+                <a
+                  href="#"
+                  class="nav__link--anchor link__hover-efect link__hover-effect--black"
+                  >About</a
+                >
+              </li>
+              <li class="nav__link">
+                <a
+                  href="#projects"
+                  class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                  >Projects</a
+                >
+              </li>
+              <li class="nav__link" onclick="toggleModal()">
+                <a
+                  class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                  >Contact</a
+                >
+              </li>
+              <li class="nav__link" onclick="toggleContrast()">
+                <a class="adjust">
+                  <i class="fa-solid fa-circle-half-stroke"></i>
+                </a>
+              </li>
+            </ul>
+            <button class="btn__menu" onclick="openMenu()">
+              <i class="fa-solid fa-bars menu__btn--icon"></i>
+            </button>
+          </div>
+          <div class="menu">
+            <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="menu__links">
+              <a
+                class="menu__link link__hover-effect menu-link__hover--white menu-link__hover--black"
+                onclick="closeMenu(), toggleModal()"
+                >About</a
+              >
+              <a
+                href="#projects"
+                class="menu__link link__hover-effect menu-link__hover--white menu-link__hover--black"
+                onclick="closeMenu()"
+                >Projects</a
+              >
+              <a
+                class="menu__link link__hover-effect menu-link__hover--white menu-link__hover--black"
+                onclick="closeMenu(), toggleModal()"
+                >Contact Us</a
+              >
+              <a href="#" class="adjust menu_adjust" onclick="toggleContrast()"
+                ><i class="fa-solid fa-circle-half-stroke"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <header class="header">
+        <div class="header__container">
+          <div class="header__content--text">
+            <h1 class="title">Search for Crags</h1>
+          </div>
+          <div class="input__wrapper">
+            <input type="text" placeholder="Search by problem name, grade, or location" class="search-bar" />
+            <button class="not__loading">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+          <ul class="results-wrapper">
+            <li class="result">
+              <h3 class="climb__name">Text</h3>
+              <h4 class="climb__grade">Grade</h3>
+              <p class="Approach__para--preview">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, aperiam.</p>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <a href="#">
+        <button class="mail__btn click" onclick="toggleModal()">
+          <i class="fa-solid fa-envelope"></i>
+        </button>
+      </a>
+      <div class="modal">
+        <div class="modal__half modal__about">
+          <h3 class="modal__title">What we do:</h3>
+          <h4 class="modal__sub-title modal__sub-title--about">
+            rock climb and route set worldwide
+          </h4>
+          <p class="modal__para">
+            We are a team of 6 setters in a
+            <b class="pink">variety of locations</b> in the just the southwest
+            for right now that we are looking for all the ways we can expand and
+            continue to
+            <b class="pink"
+              >explore creating fascinating movment for all levels</b
+            >
+            of climbers in as many places as we can.
+            <br />
+            We are always looking for more setters and more climbers to
+            <b class="pink">discuss ideas</b> and what we want to see in the
+            climbing community!
+          </p>
+          <div class="modal__setters">
+            <a
+              href="https://www.instagram.com/minisculebeta?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              class="modal__setter--link"
+            >
+              <img
+                src="./images/miniscule logo big.png"
+                class="modal__setter--img"
+                alt="minisculebeta"
+              />
+              <span class="setter__name">Min</span>
+            </a>
+            <a
+              href="https://www.instagram.com/minisculebeta?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              class="modal__setter--link"
+            >
+              <img
+                src="./images/miniscule logo big.png"
+                class="modal__setter--img"
+                alt="minisculebeta"
+              />
+              <span class="setter__name">Min</span>
+            </a>
+            <a
+              href="https://www.instagram.com/minisculebeta?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              class="modal__setter--link"
+            >
+              <img
+                src="./images/miniscule logo big.png"
+                class="modal__setter--img"
+                alt="minisculebeta"
+              />
+              <span class="setter__name">Min</span>
+            </a>
+            <a
+              href="https://www.instagram.com/minisculebeta?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              class="modal__setter--link"
+            >
+              <img
+                src="./images/miniscule logo big.png"
+                class="modal__setter--img"
+                alt="minisculebeta"
+              />
+              <span class="setter__name">Min</span>
+            </a>
+          </div>
+        </div>
+        <div class="modal__half modal__contact">
+          <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
+          <h3 class="modal__sub-title modal__subtitle--contact">
+            What do you want to see in the climbing community?
+          </h3>
+          <form id="contact__form" onsubmit="contact(event)">
+            <div class="form__item">
+              <label class="form__item--label">Name</label>
+              <input name="user_name" class="input" type="text" required />
+            </div>
+            <div class="form__item">
+              <label for="email" class="form__item--label">Email</label>
+              <input name="user_email" class="input" type="email" required />
+            </div>
+            <div class="form__item">
+              <label for="message" class="form__item--label">Message</label>
+              <input name="message" class="input" type="text" required />
+            </div>
+            <button id="contact__submit" class="form__submit">
+              Send it our way!
+            </button>
+          </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">
+            Thanks for the message! Looking forward to connecting with you soon.
+          </div>
+          <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="footer__row">
+          <a href="#">
+            <figure>
+              <img
+                class="footer__logo--img"
+                src="./images/RCRS5000 white (240 x 45 px) scalable.svg"
+                alt="footer logo"
+              />
+            </figure>
+          </a>
+          <div class="footer__social--list">
+            <a
+              href="https://www.instagram.com/rcrs5000/"
+              target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              >Instagram</a
+            >
+            <a
+              href="https://tiktok.com/rcrs5000/"
+              target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              >Tiktok</a
+            >
+            <a
+              href="#"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              >Blog</a
+            >
+            <a
+              href="#"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              onclick="toggleModal()"
+              >Contact Us</a
+            >
+          </div>
+          <div class="footer__copyright">
+            Copyright &copy; 2025 (not really) RCRS5000 Worldwide
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
