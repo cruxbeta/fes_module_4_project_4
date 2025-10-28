@@ -1,5 +1,6 @@
 let isModalOpen = false;
 let contrastToggle = false;
+let movies;
 
 //      BUTTON MENU
 
@@ -55,3 +56,35 @@ function toggleModal() {
     isModalOpen = true;
     document.body.classList += ` modal--open`;
 }
+
+//      API Integration
+async function renderMovies(search) {
+    const response = await fetch (`http://www.omdbapi.com/?i=tt3896198&apikey=817243eb`);
+    const data = await response.json();
+    not__loaading.classlist += ` movies__loading`;
+    if (!movies) {
+        movies = await getMovies();
+    }
+
+    not__loading.classList.remove(`movies__loading`);
+
+    const moviesHTML = movies
+    .map((result) => {
+        return `<div class="result">
+              <figure class="result__img--wrapper">
+                <img class="result__img" src="${result.Poster}" alt="${result.Title}">
+              </figure>
+              <div class="result__name">${result.Title}</div>
+              <div class="result__grade">${result.Runtime}</div>
+              <p class="Approach__para--preview">${result.Plot}</p>
+            </div>`;
+    })
+    .join(``);
+
+    resultsWrapper.innerHTML = moviesHTML;
+}
+setTimeout(() => {
+    renderMovies();
+});
+
+renderMovies();
